@@ -13,20 +13,27 @@ namespace MyToDoWebAPI.Services.ToDoService
             new ToDoItem{Id=2,Name="Buy Gift",Description="Description for id 2",Priority=ToDoItemPriority.Low,IsActive=true},
             new ToDoItem{Id=3,Name="Book Visa Appointment",Description="book visa appointment",Priority=ToDoItemPriority.Medium,IsActive=false}
         };
-        public List<ToDoItem> AddToDoItem(ToDoItem item)
+        public async Task<ServiceResponse<List<ToDoItem>>> AddToDoItem(ToDoItem item)
         {
-            items.Add(item); 
-            return items;
+            items.Add(item);
+
+            ServiceResponse<List<ToDoItem>> response = new ServiceResponse<List<ToDoItem>>();
+            response.data = items;
+            return response;
         }
 
-        public ToDoItem GetToDoItemById(int Id)
-        {
-            return items.FirstOrDefault(X => X.Id == Id); 
+        public async Task<ServiceResponse<ToDoItem>> GetToDoItemById(int Id)
+        {            
+            ServiceResponse<ToDoItem> response = new ServiceResponse<ToDoItem>();
+            response.data = items.FirstOrDefault(X => X.Id == Id);
+            return response;
         }
 
-        public List<ToDoItem> GetToDoItems()
+        public async Task<ServiceResponse<List<ToDoItem>>> GetToDoItems()
         {
-            return items;
+            ServiceResponse<List<ToDoItem>> response = new ServiceResponse<List<ToDoItem>>();
+            response.data = items;
+            return response;
         }
     }
 }

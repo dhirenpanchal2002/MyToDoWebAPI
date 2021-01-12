@@ -8,10 +8,10 @@ namespace MyToDoWebAPI.Services.ToDoService
 {
     public interface IToDoService
     {
-        List<ToDoItem> GetToDoItems();
+        Task<ServiceResponse<List<ToDoItem>>> GetToDoItems();
 
-        ToDoItem GetToDoItemById(int Id);
+        Task<ServiceResponse<ToDoItem>> GetToDoItemById(int Id);
 
-        List<ToDoItem> AddToDoItem(ToDoItem item);
+        Task<ServiceResponse<List<ToDoItem>>> AddToDoItem(ToDoItem item);
     }
 }

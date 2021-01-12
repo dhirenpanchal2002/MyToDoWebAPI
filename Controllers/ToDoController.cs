@@ -19,14 +19,14 @@ namespace MyToDoWebAPI.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
-            return Ok(_toDoService.GetToDoItems());
+            return Ok(await _toDoService.GetToDoItems());
         }
         [HttpGet("{Id}")]
-        public IActionResult GetById(int Id)
+        public async Task<IActionResult> GetById(int Id)
         {
-            var value = _toDoService.GetToDoItemById(Id);
+            var value =  await _toDoService.GetToDoItemById(Id);
 
             if (value == null)
                 return NotFound(Id);
@@ -34,9 +34,9 @@ namespace MyToDoWebAPI.Controllers
             return Ok(value);
         }
         [HttpPost]
-        public IActionResult AddTodo(ToDoItem item)
+        public async Task<IActionResult> AddTodo(ToDoItem item)
         {           
-            return Ok(_toDoService.AddToDoItem(item));
+            return Ok(await _toDoService.AddToDoItem(item));
         }
     }
 }

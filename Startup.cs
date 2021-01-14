@@ -10,6 +10,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MyToDoWebAPI.Services.ToDoService;
+using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using MyToDoWebAPI.Data;
 
 namespace MyToDoWebAPI
 {
@@ -25,8 +28,9 @@ namespace MyToDoWebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<DataContext>(X => X.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllers();
-
+            services.AddAutoMapper(typeof(Startup));
             services.AddScoped<IToDoService, ToDoService>();
         }
 

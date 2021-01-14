@@ -1,11 +1,12 @@
-﻿using System;
+﻿using MyToDoWebAPI.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MyToDoWebAPI.Models
+namespace MyToDoWebAPI.Dto.ToDoDto
 {
-    public class ToDoItem
+    public class GetToDoDto
     {
         public int Id { get; set; }
 

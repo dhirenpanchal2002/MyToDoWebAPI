@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using MyToDoWebAPI.Models;
 using MyToDoWebAPI.Services.ToDoService;
+using MyToDoWebAPI.Dto.ToDoDto;
 
 namespace MyToDoWebAPI.Controllers
 {
@@ -34,7 +35,7 @@ namespace MyToDoWebAPI.Controllers
             return Ok(value);
         }
         [HttpPost]
-        public async Task<IActionResult> AddTodo(ToDoItem item)
+        public async Task<IActionResult> AddTodo(AddToDoDto item)
         {           
             return Ok(await _toDoService.AddToDoItem(item));
         }

@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MyToDoWebAPI.Services.ToDoService;
+using MyToDoWebAPI.Services.AuthRepository;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using MyToDoWebAPI.Data;
@@ -32,6 +33,7 @@ namespace MyToDoWebAPI
             services.AddControllers();
             services.AddAutoMapper(typeof(Startup));
             services.AddScoped<IToDoService, ToDoService>();
+            services.AddScoped<IAuthRepository, AuthRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

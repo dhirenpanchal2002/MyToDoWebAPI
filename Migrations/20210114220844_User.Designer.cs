@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyToDoWebAPI.Data;
 
 namespace MyToDoWebAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20210114220844_User")]
+    partial class User
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,12 +40,7 @@ namespace MyToDoWebAPI.Migrations
                     b.Property<int>("Priority")
                         .HasColumnType("int");
 
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("tbl_ToDoItems");
                 });
@@ -70,20 +67,6 @@ namespace MyToDoWebAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("tbl_Users");
-                });
-
-            modelBuilder.Entity("MyToDoWebAPI.Models.ToDoItem", b =>
-                {
-                    b.HasOne("MyToDoWebAPI.Models.User", "User")
-                        .WithMany("ToDoItems")
-                        .HasForeignKey("UserId");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("MyToDoWebAPI.Models.User", b =>
-                {
-                    b.Navigation("ToDoItems");
                 });
 #pragma warning restore 612, 618
         }

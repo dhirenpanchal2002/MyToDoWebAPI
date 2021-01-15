@@ -14,5 +14,7 @@ namespace MyToDoWebAPI.Data
         }
 
         public DbSet<ToDoItem> tbl_ToDoItems { get; set; }
+
+        public DbSet<User> tbl_Users { get; set; }
     }
 }

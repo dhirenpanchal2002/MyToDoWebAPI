@@ -16,5 +16,7 @@ namespace MyToDoWebAPI.Models
         public ToDoItemPriority Priority { get; set; } = ToDoItemPriority.Medium;
 
         public Boolean IsActive { get; set; } = true;
+
+        public User User { get; set; }
     }
 }

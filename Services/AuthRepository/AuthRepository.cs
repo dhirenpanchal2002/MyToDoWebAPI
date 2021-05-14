@@ -6,15 +6,23 @@ using System.Threading.Tasks;
 using MyToDoWebAPI.Data;
 using System.Security.Cryptography;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore;
+using System.Text;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace MyToDoWebAPI.Services.AuthRepository
 {
     public class AuthRepository : IAuthRepository
     {
         private readonly DataContext _dataContext;
-        public AuthRepository(DataContext dataContext)
+        private readonly IConfiguration _configuration;
+        public AuthRepository(DataContext dataContext,IConfiguration configuration)
         {
             _dataContext = dataContext;
+            _configuration = configuration;
         }
         public async Task<bool> IsUserExist(string username)
         {
@@ -24,7 +32,6 @@ namespace MyToDoWebAPI.Services.AuthRepository
             }
             return false;
         }
-
         public async Task<ServiceResponse<string>> Login(string username, string password)
         {
             ServiceResponse<string> response = new ServiceResponse<string>();
@@ -45,14 +52,13 @@ namespace MyToDoWebAPI.Services.AuthRepository
                 else
                 {
                     response.IsSuccess = true;
-                    response.data = user.Id.ToString();
+                    response.data = CreateToekn(user);
                     response.Message = "Successfully logged in..";
                 }
             }
 
             return response;
         }
-
         public async Task<ServiceResponse<int>> Register(User user, string password)
         {
             if(await IsUserExist(user.UserName))
@@ -70,7 +76,6 @@ namespace MyToDoWebAPI.Services.AuthRepository
             response.data = user.Id;
             return response;
         }
-
         //Private method to generate the random Salt and then generate the hash based on the salt.
         private void CreatePasswordHash(string password,out  byte[] pwdHash,out  byte[] pwdSalt)
         {
@@ -98,6 +103,29 @@ namespace MyToDoWebAPI.Services.AuthRepository
             }
         }
 
+        private string CreateToekn(User user)
+        {
+            List<Claim> claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.NameIdentifier,user.Id.ToString()),
+                new Claim(ClaimTypes.Name,user.UserName)
+            };
 
+            SymmetricSecurityKey key1 = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration.GetSection("AppSettings:Token").Value));
+
+            SigningCredentials cred = new SigningCredentials(key1, SecurityAlgorithms.HmacSha512Signature);
+
+            SecurityTokenDescriptor desc = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(claims),
+                Expires = DateTime.Now.AddHours(2),
+                SigningCredentials = cred
+            };
+
+            JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
+            SecurityToken token = tokenHandler.CreateToken(desc);
+
+            return tokenHandler.WriteToken(token);
+        }
     }
 }

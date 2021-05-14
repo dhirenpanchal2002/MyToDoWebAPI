@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 using MyToDoWebAPI.Models;
 using MyToDoWebAPI.Services.ToDoService;
 using MyToDoWebAPI.Dto.ToDoDto;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MyToDoWebAPI.Controllers
 {
     [ApiController]
     [Route("[Controller]")]
+    [Authorize]
     public class ToDoController : ControllerBase
     {
         private readonly IToDoService _toDoService;
@@ -20,6 +22,7 @@ namespace MyToDoWebAPI.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> Get()
         {
             return Ok(await _toDoService.GetToDoItems());

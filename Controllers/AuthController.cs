@@ -27,7 +27,7 @@ namespace MyToDoWebAPI.Controllers
            ServiceResponse<int> response = await _authRepo.Register(
                new Models.User { UserName = registerUserDto.UserName }, registerUserDto.Password);
 
-            if (response.IsSuccess)
+            if (!response.IsSuccess)
             {
                 return BadRequest(response);
             }

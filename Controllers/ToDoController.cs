@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MyToDoWebAPI.Models;
+using System.Security.Claims;
 using MyToDoWebAPI.Services.ToDoService;
 using MyToDoWebAPI.Dto.ToDoDto;
 using Microsoft.AspNetCore.Authorization;
@@ -22,10 +23,19 @@ namespace MyToDoWebAPI.Controllers
         }
 
         [HttpGet]
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public async Task<IActionResult> Get()
         {
             return Ok(await _toDoService.GetToDoItems());
+        }
+
+        [HttpGet]
+        [Route("User")]
+       // [AllowAnonymous]
+        public async Task<IActionResult> GetbyUser()
+        {
+            int UserId = int.Parse(User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier).Value);
+            return Ok(await _toDoService.GetToDoItemsByUser(UserId));
         }
         [HttpGet("{Id}")]
         public async Task<IActionResult> GetById(int Id)

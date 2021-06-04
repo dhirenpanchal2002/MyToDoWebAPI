@@ -1,6 +1,6 @@
 ﻿using MyToDoWebAPI.Dto.ToDoDto;
 using MyToDoWebAPI.Models;
-using System;
+using System.Web;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -22,6 +22,7 @@ namespace MyToDoWebAPI.Services.ToDoService
         private readonly IMapper _todoMapper;
         private readonly DataContext _dbContext;
 
+       // private GetUserId() => int.Parse(System.Web)
         public ToDoService(IMapper todoMapper,DataContext dbContext)
         {
             _todoMapper = todoMapper;
@@ -44,6 +45,14 @@ namespace MyToDoWebAPI.Services.ToDoService
             ServiceResponse<GetToDoDto> response = new ServiceResponse<GetToDoDto>();
             ToDoItem dbitem = await _dbContext.tbl_ToDoItems.FirstOrDefaultAsync(X => X.Id == Id);
             response.data = _todoMapper.Map<GetToDoDto>(dbitem);
+            return response;
+        }
+
+        public async Task<ServiceResponse<List<GetToDoDto>>> GetToDoItemsByUser(int UserId)
+        {
+            List<ToDoItem> dbitems = await _dbContext.tbl_ToDoItems.Include(x=> x.User).Where(P => P.User.Id == UserId).ToListAsync();
+            ServiceResponse<List < GetToDoDto >> response = new ServiceResponse<List<GetToDoDto>> ();
+            response.data = (dbitems.Select(C => _todoMapper.Map<GetToDoDto>(C))).ToList();
             return response;
         }
 

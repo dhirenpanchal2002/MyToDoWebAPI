@@ -11,6 +11,8 @@ namespace MyToDoWebAPI.Services.ToDoService
     {
         Task<ServiceResponse<List<GetToDoDto>>> GetToDoItems();
 
+        Task<ServiceResponse<List<GetToDoDto>>> GetToDoItemsByUser(int UserId);
+
         Task<ServiceResponse<GetToDoDto>> GetToDoItemById(int Id);
 
         Task<ServiceResponse<List<GetToDoDto>>> AddToDoItem(AddToDoDto item);

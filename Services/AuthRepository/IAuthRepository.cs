@@ -13,5 +13,8 @@ namespace MyToDoWebAPI.Services.AuthRepository
         Task<ServiceResponse<string>> Login(string username, string password);
 
         Task<bool> IsUserExist(string username);
+                
+        Task<ServiceResponse<string>> ChangePassword(string username, string password,string newpassword);
+
     }
 }

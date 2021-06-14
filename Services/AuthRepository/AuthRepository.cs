@@ -76,6 +76,40 @@ namespace MyToDoWebAPI.Services.AuthRepository
             response.data = user.Id;
             return response;
         }
+
+        public async Task<ServiceResponse<string>> ChangePassword(string username, string password, string newpassword)
+        {
+            ServiceResponse<string> response = new ServiceResponse<string>();
+            if (!await IsUserExist(username))
+            {
+                response.IsSuccess = false;
+                response.Message = "User not found";
+            }
+            else
+            {
+                User user = await _dataContext.tbl_Users.FirstOrDefaultAsync(c => c.UserName.ToLower() == username.ToLower());
+
+                if (!VerifyPasswordHash(password, user.PwdHash, user.PwdSalt))
+                {
+                    response.IsSuccess = false;
+                    response.Message = "Wrong Password, authentication failed.";
+                }
+                else
+                {
+                    CreatePasswordHash(newpassword, out byte[] passwordHash, out byte[] passwordSalt);
+                    user.PwdHash = passwordHash;
+                    user.PwdSalt = passwordSalt;
+
+                    object p = _dataContext.tbl_Users.Update(user);
+                    await _dataContext.SaveChangesAsync();
+
+                    response.Message = "Successfully changed the new password.";
+                }
+            }
+
+            return response;
+        }
+
         //Private method to generate the random Salt and then generate the hash based on the salt.
         private void CreatePasswordHash(string password,out  byte[] pwdHash,out  byte[] pwdSalt)
         {
@@ -127,5 +161,10 @@ namespace MyToDoWebAPI.Services.AuthRepository
 
             return tokenHandler.WriteToken(token);
         }
+
+        //private bool UpdateNewPassword(User user, string password)
+        //{
+
+        //}
     }
 }

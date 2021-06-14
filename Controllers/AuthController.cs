@@ -48,5 +48,19 @@ namespace MyToDoWebAPI.Controllers
 
             return Ok(response);
         }
+
+        [HttpPost("ChangePassword")]
+        public async Task<IActionResult> ChangePassword(UserLoginDto loginUserDto)
+        {
+            ServiceResponse<string> response = await _authRepo.ChangePassword(
+                loginUserDto.UserName, loginUserDto.Password,loginUserDto.NewPassword);
+
+            if (response.IsSuccess)
+            {
+                return BadRequest(response);
+            }
+
+            return Ok(response);
+        }
     }
 }

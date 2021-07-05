@@ -3,13 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MyToDoWebAPI.Models;
+using DemoAppWebAPI.Models;
 using System.Security.Claims;
-using MyToDoWebAPI.Services.ToDoService;
-using MyToDoWebAPI.Dto.ToDoDto;
+using DemoAppWebAPI.Services.ToDoService;
+using DemoAppWebAPI.Dto.ToDoDto;
 using Microsoft.AspNetCore.Authorization;
 
-namespace MyToDoWebAPI.Controllers
+namespace DemoAppWebAPI.Controllers
 {
     [ApiController]
     [Route("[Controller]")]

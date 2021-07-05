@@ -4,12 +4,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MyToDoWebAPI.Services.AuthRepository;
-using MyToDoWebAPI.Dto.User;
+using DemoAppWebAPI.Services.AuthRepository;
+using DemoAppWebAPI.Dto.User;
 using Microsoft.EntityFrameworkCore;
-using MyToDoWebAPI.Models;
+using DemoAppWebAPI.Models;
 
-namespace MyToDoWebAPI.Controllers
+namespace DemoAppWebAPI.Controllers
 {
     [Route("[controller]")]
     [ApiController]

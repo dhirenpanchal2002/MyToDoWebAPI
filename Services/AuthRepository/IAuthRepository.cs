@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MyToDoWebAPI.Models;
+using DemoAppWebAPI.Models;
 
-namespace MyToDoWebAPI.Services.AuthRepository
+namespace DemoAppWebAPI.Services.AuthRepository
 {
     public interface IAuthRepository
     {

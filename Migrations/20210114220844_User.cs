@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace MyToDoWebAPI.Migrations
+namespace DemoAppWebAPI.Migrations
 {
     public partial class User : Migration
     {

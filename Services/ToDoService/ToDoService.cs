@@ -1,14 +1,14 @@
-﻿using MyToDoWebAPI.Dto.ToDoDto;
-using MyToDoWebAPI.Models;
+﻿using DemoAppWebAPI.Dto.ToDoDto;
+using DemoAppWebAPI.Models;
 using System.Web;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using MyToDoWebAPI.Data;
+using DemoAppWebAPI.Data;
 
-namespace MyToDoWebAPI.Services.ToDoService
+namespace DemoAppWebAPI.Services.ToDoService
 {
    
     public class ToDoService : IToDoService

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using MyToDoWebAPI.Models;
+using DemoAppWebAPI.Models;
 
-namespace MyToDoWebAPI.Data
+namespace DemoAppWebAPI.Data
 {
     public class DataContext : DbContext
     {

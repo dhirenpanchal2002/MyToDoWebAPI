@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MyToDoWebAPI.Dto.ToDoDto;
-using MyToDoWebAPI.Models;
+using DemoAppWebAPI.Dto.ToDoDto;
+using DemoAppWebAPI.Models;
 
-namespace MyToDoWebAPI.Services.ToDoService
+namespace DemoAppWebAPI.Services.ToDoService
 {
     public interface IToDoService
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace MyToDoWebAPI
+namespace DemoApp
 {
     public class WeatherForecast
     {

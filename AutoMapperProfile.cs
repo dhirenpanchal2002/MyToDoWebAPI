@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
-using MyToDoWebAPI.Dto.ToDoDto;
-using MyToDoWebAPI.Models;
+using DemoAppWebAPI.Dto.ToDoDto;
+using DemoAppWebAPI.Models;
 
-namespace MyToDoWebAPI
+namespace DemoAppWebAPI
 {
     public class AutoMapperProfile:Profile
     {

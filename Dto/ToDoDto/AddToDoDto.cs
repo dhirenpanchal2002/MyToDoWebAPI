@@ -1,10 +1,10 @@
-﻿using MyToDoWebAPI.Models;
+﻿using DemoAppWebAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MyToDoWebAPI.Dto.ToDoDto
+namespace DemoAppWebAPI.Dto.ToDoDto
 {
     public class AddToDoDto
     {

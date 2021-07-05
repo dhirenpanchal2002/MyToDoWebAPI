@@ -1,9 +1,9 @@
-﻿using MyToDoWebAPI.Models;
+﻿using DemoAppWebAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MyToDoWebAPI.Data;
+using DemoAppWebAPI.Data;
 using System.Security.Cryptography;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
@@ -13,7 +13,7 @@ using Microsoft.AspNetCore;
 using System.Text;
 using System.IdentityModel.Tokens.Jwt;
 
-namespace MyToDoWebAPI.Services.AuthRepository
+namespace DemoAppWebAPI.Services.AuthRepository
 {
     public class AuthRepository : IAuthRepository
     {

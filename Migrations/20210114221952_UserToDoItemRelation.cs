@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace MyToDoWebAPI.Migrations
+namespace DemoAppWebAPI.Migrations
 {
     public partial class UserToDoItemRelation : Migration
     {

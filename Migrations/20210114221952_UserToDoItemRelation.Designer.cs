@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using MyToDoWebAPI.Data;
+using DemoAppWebAPI.Data;
 
-namespace MyToDoWebAPI.Migrations
+namespace DemoAppWebAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
     [Migration("20210114221952_UserToDoItemRelation")]
@@ -21,7 +21,7 @@ namespace MyToDoWebAPI.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.2");
 
-            modelBuilder.Entity("MyToDoWebAPI.Models.ToDoItem", b =>
+            modelBuilder.Entity("DemoAppWebAPI.Models.ToDoItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -50,7 +50,7 @@ namespace MyToDoWebAPI.Migrations
                     b.ToTable("tbl_ToDoItems");
                 });
 
-            modelBuilder.Entity("MyToDoWebAPI.Models.User", b =>
+            modelBuilder.Entity("DemoAppWebAPI.Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -74,16 +74,16 @@ namespace MyToDoWebAPI.Migrations
                     b.ToTable("tbl_Users");
                 });
 
-            modelBuilder.Entity("MyToDoWebAPI.Models.ToDoItem", b =>
+            modelBuilder.Entity("DemoAppWebAPI.Models.ToDoItem", b =>
                 {
-                    b.HasOne("MyToDoWebAPI.Models.User", "User")
+                    b.HasOne("DemoAppWebAPI.Models.User", "User")
                         .WithMany("ToDoItems")
                         .HasForeignKey("UserId");
 
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("MyToDoWebAPI.Models.User", b =>
+            modelBuilder.Entity("DemoAppWebAPI.Models.User", b =>
                 {
                     b.Navigation("ToDoItems");
                 });

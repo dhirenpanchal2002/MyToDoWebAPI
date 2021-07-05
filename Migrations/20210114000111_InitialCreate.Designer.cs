@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using MyToDoWebAPI.Data;
+using DemoAppWebAPI.Data;
 
-namespace MyToDoWebAPI.Migrations
+namespace DemoAppWebAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
     [Migration("20210114000111_InitialCreate")]
@@ -20,7 +20,7 @@ namespace MyToDoWebAPI.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.2");
 
-            modelBuilder.Entity("MyToDoWebAPI.Models.ToDoItem", b =>
+            modelBuilder.Entity("DemoAppWebAPI.Models.ToDoItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

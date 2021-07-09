@@ -1,0 +1,524 @@
+07/09/2021 00:04:08 +01:00 [Information] - this is call for Get() method 5 
+ 07/09/2021 00:05:39 +01:00 [Information] - this is call for Get() method 5 
+ 07/09/2021 00:07:31 +01:00 [Information] - this is call for Get() method 5 
+ 07/09/2021 00:18:30 +01:00 [Information] -  API URL http://api.weatherapi.com/v1/current.json called for city=Reading 
+ 07/09/2021 00:18:42 +01:00 [Information] -  API URL http://api.weatherapi.com/v1/current.json called for city=milan 
+ 07/09/2021 00:34:50 +01:00 [Information] -  API URL http://api.weatherapi.com/v1/current.json called for city=Reading 
+ 07/09/2021 00:34:50 +01:00 [Error] - 'rimraf' is not recognized as an internal or external command,
+ 
+ 07/09/2021 00:34:50 +01:00 [Error] - operable program or batch file.
+ 
+ 07/09/2021 00:34:50 +01:00 [Error] - npm ERR! code ELIFECYCLE
+ 
+ 07/09/2021 00:34:50 +01:00 [Error] - npm ERR! errno 1
+ 
+ 07/09/2021 00:34:50 +01:00 [Error] - npm ERR! demoapp@0.1.0 start: `rimraf ./build && react-scripts start`
+ 
+ 07/09/2021 00:34:50 +01:00 [Error] - npm ERR! Exit status 1
+ 
+ 07/09/2021 00:34:50 +01:00 [Error] - npm ERR! 
+ 
+ 07/09/2021 00:34:50 +01:00 [Error] - npm ERR! Failed at the demoapp@0.1.0 start script.
+ 
+ 07/09/2021 00:34:50 +01:00 [Error] - npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+ 
+ 07/09/2021 00:34:50 +01:00 [Error] - npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+ 
+ 07/09/2021 00:34:50 +01:00 [Error] - npm ERR! A complete log of this run can be found in:
+ 
+ 07/09/2021 00:34:50 +01:00 [Error] - npm ERR!     C:\Users\dhire\AppData\Roaming\npm-cache\_logs\2021-07-08T23_34_50_487Z-debug.log
+ 
+ 07/09/2021 00:34:50 +01:00 [Error] - An unhandled exception has occurred while executing the request. 
+ System.AggregateException: One or more errors occurred. (One or more errors occurred. (The npm script 'start' exited without indicating that the create-react-app server was listening for requests. The error output was: 'rimraf' is not recognized as an internal or external command,
+
+operable program or batch file.
+
+npm ERR! code ELIFECYCLE
+
+npm ERR! errno 1
+
+npm ERR! demoapp@0.1.0 start: `rimraf ./build && react-scripts start`
+
+npm ERR! Exit status 1
+
+npm ERR! 
+
+npm ERR! Failed at the demoapp@0.1.0 start script.
+
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+
+
+
+npm ERR! A complete log of this run can be found in:
+
+npm ERR!     C:\Users\dhire\AppData\Roaming\npm-cache\_logs\2021-07-08T23_34_50_487Z-debug.log
+
+))
+ ---> System.AggregateException: One or more errors occurred. (The npm script 'start' exited without indicating that the create-react-app server was listening for requests. The error output was: 'rimraf' is not recognized as an internal or external command,
+
+operable program or batch file.
+
+npm ERR! code ELIFECYCLE
+
+npm ERR! errno 1
+
+npm ERR! demoapp@0.1.0 start: `rimraf ./build && react-scripts start`
+
+npm ERR! Exit status 1
+
+npm ERR! 
+
+npm ERR! Failed at the demoapp@0.1.0 start script.
+
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+
+
+
+npm ERR! A complete log of this run can be found in:
+
+npm ERR!     C:\Users\dhire\AppData\Roaming\npm-cache\_logs\2021-07-08T23_34_50_487Z-debug.log
+
+)
+ ---> System.InvalidOperationException: The npm script 'start' exited without indicating that the create-react-app server was listening for requests. The error output was: 'rimraf' is not recognized as an internal or external command,
+
+operable program or batch file.
+
+npm ERR! code ELIFECYCLE
+
+npm ERR! errno 1
+
+npm ERR! demoapp@0.1.0 start: `rimraf ./build && react-scripts start`
+
+npm ERR! Exit status 1
+
+npm ERR! 
+
+npm ERR! Failed at the demoapp@0.1.0 start script.
+
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+
+
+
+npm ERR! A complete log of this run can be found in:
+
+npm ERR!     C:\Users\dhire\AppData\Roaming\npm-cache\_logs\2021-07-08T23_34_50_487Z-debug.log
+
+
+ ---> System.IO.EndOfStreamException: Attempted to read past the end of the stream.
+   at Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer.ReactDevelopmentServerMiddleware.StartCreateReactAppServerAsync(String sourcePath, String scriptName, String pkgManagerCommand, Int32 portNumber, ILogger logger, DiagnosticSource diagnosticSource, CancellationToken applicationStoppingToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer.ReactDevelopmentServerMiddleware.StartCreateReactAppServerAsync(String sourcePath, String scriptName, String pkgManagerCommand, Int32 portNumber, ILogger logger, DiagnosticSource diagnosticSource, CancellationToken applicationStoppingToken)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer.ReactDevelopmentServerMiddleware.<>c.<Attach>b__2_0(Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__277_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at Microsoft.AspNetCore.SpaServices.Extensions.Util.TaskTimeoutExtensions.WithTimeout[T](Task`1 task, TimeSpan timeoutDelay, String message)
+   at Microsoft.AspNetCore.SpaServices.Extensions.Proxy.SpaProxy.PerformProxyRequest(HttpContext context, HttpClient httpClient, Task`1 baseUriTask, CancellationToken applicationStoppingToken, Boolean proxy404s)
+   at Microsoft.AspNetCore.Builder.SpaProxyingExtensions.<>c__DisplayClass2_0.<<UseProxyToSpaDevelopmentServer>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+07/09/2021 00:35:06 +01:00 [Error] - An unhandled exception has occurred while executing the request. 
+ System.InvalidOperationException: Endpoint DemoAppWebAPI.Controllers.ToDoController.Get (DemoAppWebAPI) contains authorization metadata, but a middleware was not found that supports authorization.
+Configure your application startup by adding app.UseAuthorization() inside the call to Configure(..) in the application startup code. The call to app.UseAuthorization() must appear between app.UseRouting() and app.UseEndpoints(...).
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.ThrowMissingAuthMiddlewareException(Endpoint endpoint)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+07/09/2021 00:35:06 +01:00 [Error] - An unhandled exception has occurred while executing the request. 
+ System.AggregateException: One or more errors occurred. (One or more errors occurred. (The npm script 'start' exited without indicating that the create-react-app server was listening for requests. The error output was: 'rimraf' is not recognized as an internal or external command,
+
+operable program or batch file.
+
+npm ERR! code ELIFECYCLE
+
+npm ERR! errno 1
+
+npm ERR! demoapp@0.1.0 start: `rimraf ./build && react-scripts start`
+
+npm ERR! Exit status 1
+
+npm ERR! 
+
+npm ERR! Failed at the demoapp@0.1.0 start script.
+
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+
+
+
+npm ERR! A complete log of this run can be found in:
+
+npm ERR!     C:\Users\dhire\AppData\Roaming\npm-cache\_logs\2021-07-08T23_34_50_487Z-debug.log
+
+))
+ ---> System.AggregateException: One or more errors occurred. (The npm script 'start' exited without indicating that the create-react-app server was listening for requests. The error output was: 'rimraf' is not recognized as an internal or external command,
+
+operable program or batch file.
+
+npm ERR! code ELIFECYCLE
+
+npm ERR! errno 1
+
+npm ERR! demoapp@0.1.0 start: `rimraf ./build && react-scripts start`
+
+npm ERR! Exit status 1
+
+npm ERR! 
+
+npm ERR! Failed at the demoapp@0.1.0 start script.
+
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+
+
+
+npm ERR! A complete log of this run can be found in:
+
+npm ERR!     C:\Users\dhire\AppData\Roaming\npm-cache\_logs\2021-07-08T23_34_50_487Z-debug.log
+
+)
+ ---> System.InvalidOperationException: The npm script 'start' exited without indicating that the create-react-app server was listening for requests. The error output was: 'rimraf' is not recognized as an internal or external command,
+
+operable program or batch file.
+
+npm ERR! code ELIFECYCLE
+
+npm ERR! errno 1
+
+npm ERR! demoapp@0.1.0 start: `rimraf ./build && react-scripts start`
+
+npm ERR! Exit status 1
+
+npm ERR! 
+
+npm ERR! Failed at the demoapp@0.1.0 start script.
+
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+
+
+
+npm ERR! A complete log of this run can be found in:
+
+npm ERR!     C:\Users\dhire\AppData\Roaming\npm-cache\_logs\2021-07-08T23_34_50_487Z-debug.log
+
+
+ ---> System.IO.EndOfStreamException: Attempted to read past the end of the stream.
+   at Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer.ReactDevelopmentServerMiddleware.StartCreateReactAppServerAsync(String sourcePath, String scriptName, String pkgManagerCommand, Int32 portNumber, ILogger logger, DiagnosticSource diagnosticSource, CancellationToken applicationStoppingToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer.ReactDevelopmentServerMiddleware.StartCreateReactAppServerAsync(String sourcePath, String scriptName, String pkgManagerCommand, Int32 portNumber, ILogger logger, DiagnosticSource diagnosticSource, CancellationToken applicationStoppingToken)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer.ReactDevelopmentServerMiddleware.<>c.<Attach>b__2_0(Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__277_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at Microsoft.AspNetCore.SpaServices.Extensions.Util.TaskTimeoutExtensions.WithTimeout[T](Task`1 task, TimeSpan timeoutDelay, String message)
+   at Microsoft.AspNetCore.SpaServices.Extensions.Proxy.SpaProxy.PerformProxyRequest(HttpContext context, HttpClient httpClient, Task`1 baseUriTask, CancellationToken applicationStoppingToken, Boolean proxy404s)
+   at Microsoft.AspNetCore.Builder.SpaProxyingExtensions.<>c__DisplayClass2_0.<<UseProxyToSpaDevelopmentServer>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+07/09/2021 00:41:41 +01:00 [Information] -  API URL http://api.weatherapi.com/v1/current.json called for city=Reading 
+ 07/09/2021 00:41:41 +01:00 [Error] - 'rimraf' is not recognized as an internal or external command,
+ 
+ 07/09/2021 00:41:41 +01:00 [Error] - operable program or batch file.
+ 
+ 07/09/2021 00:41:41 +01:00 [Error] - npm ERR! code ELIFECYCLE
+ 
+ 07/09/2021 00:41:41 +01:00 [Error] - npm ERR! errno 1
+ 
+ 07/09/2021 00:41:41 +01:00 [Error] - npm ERR! demoapp@0.1.0 start: `rimraf ./build && react-scripts start`
+ 
+ 07/09/2021 00:41:41 +01:00 [Error] - npm ERR! Exit status 1
+ 
+ 07/09/2021 00:41:41 +01:00 [Error] - npm ERR! 
+ 
+ 07/09/2021 00:41:41 +01:00 [Error] - npm ERR! Failed at the demoapp@0.1.0 start script.
+ 
+ 07/09/2021 00:41:41 +01:00 [Error] - npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+ 
+ 07/09/2021 00:41:41 +01:00 [Error] - npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+ 
+ 07/09/2021 00:41:41 +01:00 [Error] - npm ERR! A complete log of this run can be found in:
+ 
+ 07/09/2021 00:41:41 +01:00 [Error] - npm ERR!     C:\Users\dhire\AppData\Roaming\npm-cache\_logs\2021-07-08T23_41_41_253Z-debug.log
+ 
+ 07/09/2021 00:41:41 +01:00 [Error] - An unhandled exception has occurred while executing the request. 
+ System.AggregateException: One or more errors occurred. (One or more errors occurred. (The npm script 'start' exited without indicating that the create-react-app server was listening for requests. The error output was: 'rimraf' is not recognized as an internal or external command,
+
+operable program or batch file.
+
+npm ERR! code ELIFECYCLE
+
+npm ERR! errno 1
+
+npm ERR! demoapp@0.1.0 start: `rimraf ./build && react-scripts start`
+
+npm ERR! Exit status 1
+
+npm ERR! 
+
+npm ERR! Failed at the demoapp@0.1.0 start script.
+
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+
+
+
+npm ERR! A complete log of this run can be found in:
+
+npm ERR!     C:\Users\dhire\AppData\Roaming\npm-cache\_logs\2021-07-08T23_41_41_253Z-debug.log
+
+))
+ ---> System.AggregateException: One or more errors occurred. (The npm script 'start' exited without indicating that the create-react-app server was listening for requests. The error output was: 'rimraf' is not recognized as an internal or external command,
+
+operable program or batch file.
+
+npm ERR! code ELIFECYCLE
+
+npm ERR! errno 1
+
+npm ERR! demoapp@0.1.0 start: `rimraf ./build && react-scripts start`
+
+npm ERR! Exit status 1
+
+npm ERR! 
+
+npm ERR! Failed at the demoapp@0.1.0 start script.
+
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+
+
+
+npm ERR! A complete log of this run can be found in:
+
+npm ERR!     C:\Users\dhire\AppData\Roaming\npm-cache\_logs\2021-07-08T23_41_41_253Z-debug.log
+
+)
+ ---> System.InvalidOperationException: The npm script 'start' exited without indicating that the create-react-app server was listening for requests. The error output was: 'rimraf' is not recognized as an internal or external command,
+
+operable program or batch file.
+
+npm ERR! code ELIFECYCLE
+
+npm ERR! errno 1
+
+npm ERR! demoapp@0.1.0 start: `rimraf ./build && react-scripts start`
+
+npm ERR! Exit status 1
+
+npm ERR! 
+
+npm ERR! Failed at the demoapp@0.1.0 start script.
+
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+
+
+
+npm ERR! A complete log of this run can be found in:
+
+npm ERR!     C:\Users\dhire\AppData\Roaming\npm-cache\_logs\2021-07-08T23_41_41_253Z-debug.log
+
+
+ ---> System.IO.EndOfStreamException: Attempted to read past the end of the stream.
+   at Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer.ReactDevelopmentServerMiddleware.StartCreateReactAppServerAsync(String sourcePath, String scriptName, String pkgManagerCommand, Int32 portNumber, ILogger logger, DiagnosticSource diagnosticSource, CancellationToken applicationStoppingToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer.ReactDevelopmentServerMiddleware.StartCreateReactAppServerAsync(String sourcePath, String scriptName, String pkgManagerCommand, Int32 portNumber, ILogger logger, DiagnosticSource diagnosticSource, CancellationToken applicationStoppingToken)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer.ReactDevelopmentServerMiddleware.<>c.<Attach>b__2_0(Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__277_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at Microsoft.AspNetCore.SpaServices.Extensions.Util.TaskTimeoutExtensions.WithTimeout[T](Task`1 task, TimeSpan timeoutDelay, String message)
+   at Microsoft.AspNetCore.SpaServices.Extensions.Proxy.SpaProxy.PerformProxyRequest(HttpContext context, HttpClient httpClient, Task`1 baseUriTask, CancellationToken applicationStoppingToken, Boolean proxy404s)
+   at Microsoft.AspNetCore.Builder.SpaProxyingExtensions.<>c__DisplayClass2_0.<<UseProxyToSpaDevelopmentServer>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+07/09/2021 00:41:49 +01:00 [Information] - this is call for Get() method 5 
+ 07/09/2021 00:41:51 +01:00 [Error] - An unhandled exception has occurred while executing the request. 
+ System.AggregateException: One or more errors occurred. (One or more errors occurred. (The npm script 'start' exited without indicating that the create-react-app server was listening for requests. The error output was: 'rimraf' is not recognized as an internal or external command,
+
+operable program or batch file.
+
+npm ERR! code ELIFECYCLE
+
+npm ERR! errno 1
+
+npm ERR! demoapp@0.1.0 start: `rimraf ./build && react-scripts start`
+
+npm ERR! Exit status 1
+
+npm ERR! 
+
+npm ERR! Failed at the demoapp@0.1.0 start script.
+
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+
+
+
+npm ERR! A complete log of this run can be found in:
+
+npm ERR!     C:\Users\dhire\AppData\Roaming\npm-cache\_logs\2021-07-08T23_41_41_253Z-debug.log
+
+))
+ ---> System.AggregateException: One or more errors occurred. (The npm script 'start' exited without indicating that the create-react-app server was listening for requests. The error output was: 'rimraf' is not recognized as an internal or external command,
+
+operable program or batch file.
+
+npm ERR! code ELIFECYCLE
+
+npm ERR! errno 1
+
+npm ERR! demoapp@0.1.0 start: `rimraf ./build && react-scripts start`
+
+npm ERR! Exit status 1
+
+npm ERR! 
+
+npm ERR! Failed at the demoapp@0.1.0 start script.
+
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+
+
+
+npm ERR! A complete log of this run can be found in:
+
+npm ERR!     C:\Users\dhire\AppData\Roaming\npm-cache\_logs\2021-07-08T23_41_41_253Z-debug.log
+
+)
+ ---> System.InvalidOperationException: The npm script 'start' exited without indicating that the create-react-app server was listening for requests. The error output was: 'rimraf' is not recognized as an internal or external command,
+
+operable program or batch file.
+
+npm ERR! code ELIFECYCLE
+
+npm ERR! errno 1
+
+npm ERR! demoapp@0.1.0 start: `rimraf ./build && react-scripts start`
+
+npm ERR! Exit status 1
+
+npm ERR! 
+
+npm ERR! Failed at the demoapp@0.1.0 start script.
+
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+
+
+
+npm ERR! A complete log of this run can be found in:
+
+npm ERR!     C:\Users\dhire\AppData\Roaming\npm-cache\_logs\2021-07-08T23_41_41_253Z-debug.log
+
+
+ ---> System.IO.EndOfStreamException: Attempted to read past the end of the stream.
+   at Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer.ReactDevelopmentServerMiddleware.StartCreateReactAppServerAsync(String sourcePath, String scriptName, String pkgManagerCommand, Int32 portNumber, ILogger logger, DiagnosticSource diagnosticSource, CancellationToken applicationStoppingToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer.ReactDevelopmentServerMiddleware.StartCreateReactAppServerAsync(String sourcePath, String scriptName, String pkgManagerCommand, Int32 portNumber, ILogger logger, DiagnosticSource diagnosticSource, CancellationToken applicationStoppingToken)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer.ReactDevelopmentServerMiddleware.<>c.<Attach>b__2_0(Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__277_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at Microsoft.AspNetCore.SpaServices.Extensions.Util.TaskTimeoutExtensions.WithTimeout[T](Task`1 task, TimeSpan timeoutDelay, String message)
+   at Microsoft.AspNetCore.SpaServices.Extensions.Proxy.SpaProxy.PerformProxyRequest(HttpContext context, HttpClient httpClient, Task`1 baseUriTask, CancellationToken applicationStoppingToken, Boolean proxy404s)
+   at Microsoft.AspNetCore.Builder.SpaProxyingExtensions.<>c__DisplayClass2_0.<<UseProxyToSpaDevelopmentServer>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+07/09/2021 00:49:29 +01:00 [Information] -  API URL http://api.weatherapi.com/v1/current.json called for city=Reading 
+ 07/09/2021 00:50:42 +01:00 [Information] -  API URL http://api.weatherapi.com/v1/current.json called for city=Reading 
+ 07/09/2021 00:50:52 +01:00 [Information] - this is call for Get() method 5 
+ 07/09/2021 00:56:10 +01:00 [Information] -  API URL http://api.weatherapi.com/v1/current.json called for city=Reading 
+ 07/09/2021 00:56:17 +01:00 [Information] - this is call for Get() method 5 
+ 07/09/2021 01:01:42 +01:00 [Information] - this is call for Get() method 5 
+ 07/09/2021 01:01:43 +01:00 [Error] - An unhandled exception has occurred while executing the request. 
+ System.AggregateException: One or more errors occurred. (One or more errors occurred. (The npm script 'start' exited without indicating that the create-react-app server was listening for requests. The error output was: ))
+ ---> System.AggregateException: One or more errors occurred. (The npm script 'start' exited without indicating that the create-react-app server was listening for requests. The error output was: )
+ ---> System.InvalidOperationException: The npm script 'start' exited without indicating that the create-react-app server was listening for requests. The error output was: 
+ ---> System.IO.EndOfStreamException: Attempted to read past the end of the stream.
+   at Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer.ReactDevelopmentServerMiddleware.StartCreateReactAppServerAsync(String sourcePath, String scriptName, String pkgManagerCommand, Int32 portNumber, ILogger logger, DiagnosticSource diagnosticSource, CancellationToken applicationStoppingToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer.ReactDevelopmentServerMiddleware.StartCreateReactAppServerAsync(String sourcePath, String scriptName, String pkgManagerCommand, Int32 portNumber, ILogger logger, DiagnosticSource diagnosticSource, CancellationToken applicationStoppingToken)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer.ReactDevelopmentServerMiddleware.<>c.<Attach>b__2_0(Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__277_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at Microsoft.AspNetCore.SpaServices.Extensions.Util.TaskTimeoutExtensions.WithTimeout[T](Task`1 task, TimeSpan timeoutDelay, String message)
+   at Microsoft.AspNetCore.SpaServices.Extensions.Proxy.SpaProxy.PerformProxyRequest(HttpContext context, HttpClient httpClient, Task`1 baseUriTask, CancellationToken applicationStoppingToken, Boolean proxy404s)
+   at Microsoft.AspNetCore.Builder.SpaProxyingExtensions.<>c__DisplayClass2_0.<<UseProxyToSpaDevelopmentServer>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+07/09/2021 01:07:42 +01:00 [Information] - this is call for Get() method 5 
+ 

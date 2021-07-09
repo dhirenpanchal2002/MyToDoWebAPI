@@ -1,10 +1,20 @@
+using AutoMapper;
+using DemoAppWebAPI.Data;
+using DemoAppWebAPI.Services.AuthRepository;
+using DemoAppWebAPI.Services.ToDoService;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
+
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace DemoApp
 {
@@ -20,6 +30,28 @@ namespace DemoApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<ExtAPIConfigOptions>(Configuration.GetSection("ExtWeatherAPI"));
+            services.AddDbContext<DataContext>(X => X.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddControllers();
+            services.AddAutoMapper(typeof(Startup));
+            services.AddScoped<IToDoService, ToDoService>();
+            services.AddScoped<IAuthRepository, AuthRepository>();
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer
+                (options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration.GetSection("AppSettings:Token").Value)),
+                        ValidateIssuer = false,
+                        ValidateAudience = false
+                    };
+                }
+                );
+
+            services.AddHttpClient();
+            services.AddHealthChecks();
+
 
             services.AddControllersWithViews();
 
@@ -28,6 +60,7 @@ namespace DemoApp
             {
                 configuration.RootPath = "ClientApp/build";
             });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,12 +77,27 @@ namespace DemoApp
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
-            app.UseStaticFiles();
-            app.UseSpaStaticFiles();
+            //custom middleware for testing...
+            //app.Use( async(context,next) =>
+            //{
+            //    var apiOptions = Configuration.GetSection("ExtWeatherAPI").Get<ExtAPIConfigOptions>();
+            //    Console.WriteLine($" Key value {Configuration["MyKey"]}");
+            //    Console.WriteLine($" API URL {apiOptions.BaseURL}");
+            //    Console.WriteLine($" API Key {apiOptions.APIKey}");
+            //    await next();
+            //});
+            
 
             app.UseRouting();
 
+            app.UseAuthentication();
+         
+
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+            app.UseSpaStaticFiles();
+         
+            app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

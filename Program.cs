@@ -1,3 +1,5 @@
+using Serilog;
+using Serilog.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,14 +15,34 @@ namespace DemoApp
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            try
+            {
+                var configuration = new ConfigurationBuilder()
+                            .AddJsonFile("Appsettings.Json")
+                            .Build();
+
+                Log.Logger = new LoggerConfiguration()
+                       //.WriteTo.File("Logs/Log.txt",rollingInterval:RollingInterval.Day)
+                       .ReadFrom.Configuration(configuration)
+                       .CreateLogger();
+
+                CreateHostBuilder(args).Build().Run();
+            }
+            finally
+            {
+                Log.CloseAndFlush();
+            }
+
+
+
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder.UseStartup<Startup>()
+                    .UseSerilog();
                 });
     }
 }

@@ -5,14 +5,14 @@ export class FetchData extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { forecasts: [], loading: true };
+    this.state = { todoList: [], loading: true };
   }
 
   componentDidMount() {
     this.populateWeatherData();
   }
 
-  static renderForecastsTable(forecasts) {
+  static renderForecastsTable(todoList) {
     return (
       <table className='table table-striped' aria-labelledby="tabelLabel">
         <thead>
@@ -24,12 +24,12 @@ export class FetchData extends Component {
           </tr>
         </thead>
         <tbody>
-          {forecasts.map(forecast =>
-            <tr key={forecast.date}>
-              <td>{forecast.date}</td>
-              <td>{forecast.temperatureC}</td>
-              <td>{forecast.temperatureF}</td>
-              <td>{forecast.summary}</td>
+          {todoList.map(todoItem =>
+            <tr key={todoItem.Id}>
+              <td>{todoItem.name}</td>
+              <td>{todoItem.description}</td>
+              <td>{todoItem.priority}</td>
+              <td>{todoItem.isactive}</td>
             </tr>
           )}
         </tbody>
@@ -40,11 +40,11 @@ export class FetchData extends Component {
   render() {
     let contents = this.state.loading
       ? <p><em>Loading...</em></p>
-      : FetchData.renderForecastsTable(this.state.forecasts);
+      : FetchData.renderForecastsTable(this.state.todoList);
 
     return (
       <div>
-        <h1 id="tabelLabel" >Weather forecast</h1>
+        <h1 id="tabelLabel" >Weather todoItem</h1>
         <p>This component demonstrates fetching data from the server.</p>
         {contents}
       </div>
@@ -52,8 +52,8 @@ export class FetchData extends Component {
   }
 
   async populateWeatherData() {
-    const response = await fetch('weatherforecast');
+    const response = await fetch('ToDo');
     const data = await response.json();
-    this.setState({ forecasts: data, loading: false });
+    this.setState({ todoList: data.data, loading: false });
   }
 }

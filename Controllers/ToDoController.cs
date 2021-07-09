@@ -8,6 +8,7 @@ using System.Security.Claims;
 using DemoAppWebAPI.Services.ToDoService;
 using DemoAppWebAPI.Dto.ToDoDto;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.Logging;
 
 namespace DemoAppWebAPI.Controllers
 {
@@ -17,15 +18,18 @@ namespace DemoAppWebAPI.Controllers
     public class ToDoController : ControllerBase
     {
         private readonly IToDoService _toDoService;
-        public ToDoController(IToDoService toDoService)
+        private readonly ILogger<ToDoController> _logger;
+        public ToDoController(IToDoService toDoService, ILogger<ToDoController> logger)
         {
             _toDoService = toDoService;
+            _logger = logger;
         }
 
         [HttpGet]
-        //[AllowAnonymous]
+        [AllowAnonymous]
         public async Task<IActionResult> Get()
         {
+            _logger.LogInformation(1001,"this is call for Get() method {param}",5);
             return Ok(await _toDoService.GetToDoItems());
         }
 

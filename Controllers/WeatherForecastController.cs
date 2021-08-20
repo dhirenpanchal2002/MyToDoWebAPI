@@ -7,11 +7,13 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using DemoAppWebAPI.Filters;
 
 namespace DemoApp.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [MesureActionDurationFilter("ControllerLevel-WeatherForecastController")]
     public class WeatherForecastController : ControllerBase
     {
        
@@ -29,10 +31,15 @@ namespace DemoApp.Controllers
         }
 
         [HttpGet]
+        [Produces("application/json")]
+        [AsyncFilterAttribute("Weatherforecast-Get")]
         public async Task<string> Get(string cityName)
         {
             _logger.LogInformation($" API URL {_extAPIConfig.Value.BaseURL} called for city={cityName}");
-            
+
+            if (string.IsNullOrEmpty(cityName))
+                throw new Exception("Cityname cannot be empty.");
+
             var httpclient = _httpclientFactory.CreateClient();
             var baseURL = $"{_extAPIConfig.Value.BaseURL}?key={_extAPIConfig.Value.APIKey}&q={cityName}";
             var response = await httpclient.GetAsync(baseURL);

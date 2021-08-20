@@ -18,13 +18,19 @@ export class Counter extends Component {
   render() {
     return (
       <div>
-        <h1>Counter</h1>
+       <h1>About</h1>
 
         <p>This is a simple example of a React component.</p>
 
         <p aria-live="polite">Current count: <strong>{this.state.currentCount}</strong></p>
 
-        <button className="btn btn-primary" onClick={this.incrementCounter}>Increment</button>
+
+            <p>Welcome to ToDo management single-page application, built with:</p>
+            <ul>
+                <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>
+                <li><a href='https://facebook.github.io/react/'>React</a> for client-side code</li>
+                <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>
+            </ul>
       </div>
     );
   }

@@ -5,16 +5,16 @@ using DemoAppWebAPI.Services.ToDoService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
-
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using DemoAppWebAPI.Middlewares;
+using DemoAppWebAPI.Filters;
 
 namespace DemoApp
 {
@@ -31,8 +31,17 @@ namespace DemoApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.Configure<ExtAPIConfigOptions>(Configuration.GetSection("ExtWeatherAPI"));
+
+            services.AddTransient<ExceptionHandlingMiddleware>();
+
             services.AddDbContext<DataContext>(X => X.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddControllers();
+
+            //-Global filter configuration
+            //services.AddControllers(option =>
+            //{
+            //    option.Filters.Add(new MesureActionDurationFilter());
+                
+            //});
             services.AddAutoMapper(typeof(Startup));
             services.AddScoped<IToDoService, ToDoService>();
             services.AddScoped<IAuthRepository, AuthRepository>();
@@ -55,7 +64,7 @@ namespace DemoApp
 
             services.AddControllersWithViews();
 
-            // In production, the React files will be served from this directory
+            //// In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/build";
@@ -69,6 +78,7 @@ namespace DemoApp
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                //app.UseExceptionHandler("/Error");
             }
             else
             {
@@ -90,6 +100,8 @@ namespace DemoApp
 
             app.UseRouting();
 
+            app.UseMiddleware<ExceptionHandlingMiddleware>();
+
             app.UseAuthentication();
          
 
@@ -105,6 +117,7 @@ namespace DemoApp
                     pattern: "{controller}/{action=Index}/{id?}");
             });
 
+            app.UseHealthChecks("/health");
             app.UseSpa(spa =>
             {
                 spa.Options.SourcePath = "ClientApp";

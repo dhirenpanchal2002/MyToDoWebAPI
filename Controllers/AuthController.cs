@@ -43,7 +43,7 @@ namespace DemoAppWebAPI.Controllers
 
             if (response.IsSuccess)
             {
-                return BadRequest(response);
+                return Ok(response);
             }
 
             return Ok(response);

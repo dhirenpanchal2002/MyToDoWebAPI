@@ -5,8 +5,11 @@ import { NavMenu } from './NavMenu';
 export class Layout extends Component {
   static displayName = Layout.name;
 
-  render () {
-    return (
+
+    render() {
+
+      return (
+        
       <div>
         <NavMenu />
         <Container>
@@ -16,3 +19,4 @@ export class Layout extends Component {
     );
   }
 }
+

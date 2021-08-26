@@ -1,20 +1,17 @@
-import React, {useEffect} from 'react';
-import UserLogin from './Login';
-import { useContext } from 'react';
-import AuthContext from './Storage-Context/auth-context';
+import React from 'react';
 
 const Home = (props) => {
 
-  const displayName = Home.name;
-    const ctx = useContext(AuthContext);
+  //const displayName = Home.name;
+    //const ctx = useContext(AuthContext);
 
-    console.log(ctx.isUserLoggedin + '  in home comp--- ' + typeof (ctx.isUserLoggedin));
+    //console.log(ctx.isUserLoggedin + '  in home comp--- ' + typeof (ctx.isUserLoggedin));
 
+    const LoggedUserName = localStorage.getItem("LOGGEDIN_USERNAME", true);
 
     return (
         <div>
-            {ctx.isUserLoggedin && "User Successfully Logged in"}
-            {!ctx.isUserLoggedin && <UserLogin />}
+            {"Welcome " + LoggedUserName + "..!" }
         </div>);
     
   

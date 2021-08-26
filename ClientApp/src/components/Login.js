@@ -1,9 +1,7 @@
-﻿import { error } from 'jquery';
-import React, { useState,useContext } from 'react';
-import ReactDOM from 'react-dom';
+﻿import React, { useState,useContext } from 'react';
 import classes from './Login.module.css';
 import Card from './UI/Card'
-import { Button, Form, FormGroup, Label, Input, FormText, Alert, FormFeedback } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, Alert } from 'reactstrap';
 import AuthContext from './Storage-Context/auth-context';
 
 const UserLogin = (props) => {
@@ -25,9 +23,6 @@ const UserLogin = (props) => {
         setPassword(event.target.value);
     };
 
-    const errorDataChangeHandler = (event) => {
-        setErrorData(null);
-    }
 
     const onLoginClickHander = (event) => {
         event.preventDefault();
@@ -58,7 +53,7 @@ const UserLogin = (props) => {
             "Password": Password,
             "NewPassword" : ""};
 
-        console.log(formData);
+        //console.log(formData);
 
         const response = await fetch('Auth/Login', {
             method: 'POST',
@@ -68,8 +63,8 @@ const UserLogin = (props) => {
             }
         })
 
-        console.log(response);
-        if (response.status != 200)
+        //console.log(response);
+        if (response.status !== 200)
         {
             setErrorData({ title: response.status, message: response.statusText })
             return;
@@ -85,12 +80,15 @@ const UserLogin = (props) => {
             setErrorData({ title: response.status, message: data.message })
             localStorage.setItem("IS_LOGGEDIN", false);
             ctx.isUserLoggedin = false;
+            //props.SuccessAuthenicateHander(false);
         }
         else {
             localStorage.setItem("LOGGEDIN_USERNAME", UserName);
             localStorage.setItem("LOGGEDIN_USERJWT", data.data);
             localStorage.setItem("IS_LOGGEDIN", true);
             ctx.isUserLoggedin = true;
+
+            ctx.OnSuccessfulAuth();
         }
     };
 
@@ -102,11 +100,11 @@ const UserLogin = (props) => {
 
                 <FormGroup className="position-relative">
                     <Label for="UserEmail">Email</Label>
-                    <Input type="email" name="email" id="UserEmail" onChange={onUsernameChangeHandler} placeholder="Username" />
+                    <Input type="email" name="email" id="UserEmail" autoComplete="true" onChange={onUsernameChangeHandler} placeholder="Username" />
                 </FormGroup>                
                 <FormGroup className="position-relative">
                     <Label for="UserPassword">Password</Label>
-                    <Input type="password" name="password" id="UserPassword" onChange={onPasswordChangeHandler} placeholder="Password" />
+                    <Input type="password" name="password" autoComplete="true" id="UserPassword" onChange={onPasswordChangeHandler} placeholder="Password" />
                   
                 </FormGroup>
                 <br />

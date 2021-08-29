@@ -30,7 +30,7 @@ export class NavMenu extends Component {
           
 
         const { isUserLoggedin: isAuthenticated, loggedOut, LoggedIn } = this.context;
-        console.log(this.context);
+        //console.log(this.context);
 
     return (
       <header>

@@ -43,7 +43,7 @@ const App = (props) => {
        // console.log(`${isAuthenticated} === notified after authentication ===  ${true}`);
     }
 
-    console.log("App Render" + isAuthenticated);
+   // console.log("App Render" + isAuthenticated);
 
     return (
         

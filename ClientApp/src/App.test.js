@@ -4,13 +4,19 @@ import { MemoryRouter } from 'react-router-dom';
 import App from './App';
 import { render, screen } from '@testing-library/react';
 
-test('renders without crashing', async () => {
-  const div = document.createElement('div');
-  ReactDOM.render(
-    <MemoryRouter>
-      <App />
-    </MemoryRouter>, div);
-  await new Promise(resolve => setTimeout(resolve, 1000));
+
+describe('Components-Unit-Tests', () => {
+
+    //1. App render  test
+    test('renders without crashing', async () => {
+        const div = document.createElement('div');
+        ReactDOM.render(
+            <MemoryRouter>
+                <App />
+            </MemoryRouter>, div);
+        await new Promise(resolve => setTimeout(resolve, 1000));
+    });
+
 });
 
 

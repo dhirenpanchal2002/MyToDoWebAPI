@@ -25,7 +25,7 @@ const App = (props) => {
         
         ctx.isUserLoggedin = isAuthenticated;
 
-        console.log(`${isAuthenticated} ===in APP ===  ${ctx.isUserLoggedin}`);
+        //console.log(`${isAuthenticated} ===in APP ===  ${ctx.isUserLoggedin}`);
     }, [isAuthenticated,ctx])
 
     const logoutHander = () => {
@@ -43,7 +43,7 @@ const App = (props) => {
        // console.log(`${isAuthenticated} === notified after authentication ===  ${true}`);
     }
 
-    console.log("App Render" + isAuthenticated);
+   // console.log("App Render" + isAuthenticated);
 
     return (
         

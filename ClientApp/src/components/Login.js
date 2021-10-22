@@ -72,7 +72,7 @@ const UserLogin = (props) => {
 
         const data = await response.json();
 
-        console.log(data);
+        //console.log(data);
         //this.setState({ todoList: data.data, loading: false });
         
 

@@ -20,6 +20,12 @@ namespace DemoAppWebAPI.Models
 
         public ToDoItemPriority Priority { get; set; } = ToDoItemPriority.Medium;
 
+        public ToDoItemStatus Status { get; set; } = ToDoItemStatus.Pending;
+
+        
+        public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
+
+        public DateTime? CompletedDate { get; set; } = null;
         public Boolean IsActive { get; set; } = true;
 
         public User User { get; set; }

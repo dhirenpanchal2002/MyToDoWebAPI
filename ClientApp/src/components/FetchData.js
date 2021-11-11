@@ -31,8 +31,8 @@ export class FetchData extends Component {
             <tr key={todoItem.Id}>
               <td>{todoItem.name}</td>
               <td>{todoItem.description}</td>
-              <td>{todoItem.priority}</td>
-              <td>{todoItem.isactive}</td>
+              <td>{todoItem.priorityName}</td>
+              <td>{todoItem.statusName}</td>
             </tr>
           )}
         </tbody>

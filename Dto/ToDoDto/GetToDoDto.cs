@@ -14,8 +14,20 @@ namespace DemoAppWebAPI.Dto.ToDoDto
 
         public string Description { get; set; } = null;
 
-        public ToDoItemPriority Priority { get; set; } = ToDoItemPriority.Medium;
+        public ToDoItemPriority Priority { get; set; }
+
+        public string PriorityName { get { return Priority.ToString("F"); }  }
 
         public Boolean IsActive { get; set; } = true;
+
+        public string StatusName { get { return Status.ToString("F"); } }
+
+        public ToDoItemStatus Status { get; set; }
+
+        public DateTime CreatedDate { get; set; }
+
+        public DateTime? CompletedDate { get; set; }
+
+        public string City { get; set; }
     }
 }

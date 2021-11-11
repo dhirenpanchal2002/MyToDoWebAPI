@@ -15,5 +15,7 @@ namespace DemoAppWebAPI.Dto.ToDoDto
         public ToDoItemPriority Priority { get; set; } = ToDoItemPriority.Medium;
 
         public Boolean IsActive { get; set; } = true;
+
+        public string City { get; set; }
     }
 }

@@ -63,7 +63,7 @@ const UserLogin = (props) => {
             }
         })
 
-        //console.log(response);
+        console.log(response);
         if (response.status !== 200)
         {
             setErrorData({ title: response.status, message: response.statusText })
@@ -72,7 +72,7 @@ const UserLogin = (props) => {
 
         const data = await response.json();
 
-        //console.log(data);
+        //console.log(data.data.city);
         //this.setState({ todoList: data.data, loading: false });
         
 
@@ -84,7 +84,8 @@ const UserLogin = (props) => {
         }
         else {
             localStorage.setItem("LOGGEDIN_USERNAME", UserName);
-            localStorage.setItem("LOGGEDIN_USERJWT", data.data);
+            localStorage.setItem("LOGGEDIN_USERJWT", data.data.token);
+            localStorage.setItem("LOGGEDIN_CITY", data.data.city);
             localStorage.setItem("IS_LOGGEDIN", true);
             ctx.isUserLoggedin = true;
 

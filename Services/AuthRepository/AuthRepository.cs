@@ -12,6 +12,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore;
 using System.Text;
 using System.IdentityModel.Tokens.Jwt;
+using DemoAppWebAPI.Dto.User;
 
 namespace DemoAppWebAPI.Services.AuthRepository
 {
@@ -32,9 +33,9 @@ namespace DemoAppWebAPI.Services.AuthRepository
             }
             return false;
         }
-        public async Task<ServiceResponse<string>> Login(string username, string password)
+        public async Task<ServiceResponse<UserLoginDto>> Login(string username, string password)
         {
-            ServiceResponse<string> response = new ServiceResponse<string>();
+            ServiceResponse<UserLoginDto> response = new ServiceResponse<UserLoginDto>();
             if(!await IsUserExist(username))
             {
                 response.IsSuccess = false;
@@ -48,11 +49,12 @@ namespace DemoAppWebAPI.Services.AuthRepository
                 {
                     response.IsSuccess = false;
                     response.Message = "Wrong Password";
+                    response.data = null;
                 }
                 else
                 {
                     response.IsSuccess = true;
-                    response.data = CreateToekn(user);
+                    response.data = new UserLoginDto { Token = CreateToekn(user), City = user.City, UserName = user.UserName };                    
                     response.Message = "Successfully logged in..";
                 }
             }

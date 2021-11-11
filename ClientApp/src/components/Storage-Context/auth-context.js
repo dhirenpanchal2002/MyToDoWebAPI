@@ -3,6 +3,7 @@
 const AuthContext = React.createContext({
 
     isUserLoggedin: false,
+    UserCity: "",
     OnLogout: () => { },
     OnSuccessfulAuth: () => { }
 });

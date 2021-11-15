@@ -22,7 +22,7 @@ namespace DemoApp.Controllers
         private readonly IHttpClientFactory _httpclientFactory;
 
         public WeatherForecastController(ILogger<WeatherForecastController> logger,
-                IOptionsSnapshot< ExtAPIConfigOptions> extAPIConfig,
+                IOptionsSnapshot<ExtAPIConfigOptions> extAPIConfig,
                 IHttpClientFactory httpclientFactory)
         {
             _logger = logger;

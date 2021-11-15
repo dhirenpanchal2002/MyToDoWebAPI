@@ -11,6 +11,10 @@ namespace DemoAppWebAPI.Dto.User
 
         public string UserName { get; set; }
 
+        public string City { get; set; }
+
         public string NewPassword { get; set; }
+
+        public string Token { get; set; }
     }
 }

@@ -38,7 +38,7 @@ namespace DemoAppWebAPI.Controllers
         [HttpPost("Login")]
         public async Task<IActionResult> Login(UserLoginDto loginUserDto)
         {
-            ServiceResponse<string> response = await _authRepo.Login(
+            ServiceResponse<UserLoginDto> response = await _authRepo.Login(
                 loginUserDto.UserName, loginUserDto.Password);
 
             if (response.IsSuccess)

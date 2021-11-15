@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DemoAppWebAPI.Dto.User;
 using DemoAppWebAPI.Models;
 
 namespace DemoAppWebAPI.Services.AuthRepository
@@ -10,7 +11,7 @@ namespace DemoAppWebAPI.Services.AuthRepository
     {
         Task<ServiceResponse<int>> Register(User user,string password);
 
-        Task<ServiceResponse<string>> Login(string username, string password);
+        Task<ServiceResponse<UserLoginDto>> Login(string username, string password);
 
         Task<bool> IsUserExist(string username);
                 

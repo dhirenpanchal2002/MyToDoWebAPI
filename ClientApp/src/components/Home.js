@@ -1,4 +1,6 @@
 import React from 'react';
+import classes from './Home.module.css';
+import profileIcon from '.././Images/account.svg';
 
 const Home = (props) => {
 
@@ -11,10 +13,9 @@ const Home = (props) => {
 
     return (
         <div>
-            {"Welcome " + LoggedUserName + "..!" }
+            <img src={profileIcon} className={classes.imgIcon} alt="View Profile" id="imgProfile" />
+            <a href="/Profile" className={classes.stdHref}>{LoggedUserName}</a>
         </div>);
-    
-  
 }
 
 export default Home;

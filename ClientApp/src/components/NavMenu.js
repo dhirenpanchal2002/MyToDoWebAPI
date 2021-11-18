@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import './NavMenu.css';
+import Classes from './NavMenu.css';
 import AuthContext from './Storage-Context/auth-context';
 
 
@@ -34,7 +34,7 @@ export class NavMenu extends Component {
 
     return (
         <header className="topheader">
-        <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3" color>
+        <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3">
           <Container>
             <NavbarBrand tag={Link} to="/">Todo Management</NavbarBrand>
             <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />

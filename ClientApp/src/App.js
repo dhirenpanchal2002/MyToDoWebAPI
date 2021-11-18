@@ -4,7 +4,7 @@ import { Layout } from './components/Layout';
 import Login from './components/Login';
 import LogOut from './components/LogOut';
 import  Home  from './components/Home';
-import { FetchData } from './components/FetchData';
+import  TodoItems  from './components/TodoItems';
 import { Counter } from './components/Counter';
 import { useContext,useState } from 'react';
 import './custom.css'
@@ -57,7 +57,7 @@ const App = (props) => {
                 {isAuthenticated && <Route exact path='/' component={Home} />}
                 {!isAuthenticated && <Route exact path='/' component={Login} />}
                 {isAuthenticated && <Route path='/About' component={Counter} />}
-                {isAuthenticated && <Route path='/ToDo-Items' component={FetchData} />}
+                {isAuthenticated && <Route path='/ToDo-Items' component={TodoItems} />}
                 {isAuthenticated && <Route path='/LogOut' component={LogOut} />}
             </Layout>
         </AuthContext.Provider>

@@ -1,0 +1,16 @@
+﻿.imgIcon {
+    margin: 3px 3px 3px 3px;
+    padding: 3px 3px 3px 3px;
+    border: double 2px black;
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    vertical-align: central;
+    border-radius: 5px;
+}
+
+.stdHref{
+
+    font-size: 20px;
+}

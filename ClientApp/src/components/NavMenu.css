@@ -3,7 +3,7 @@ a.navbar-brand {
     text-align: center;
     word-break: break-all;
     color: white;
-    background-color:darkslategray
+    background-color:royalblue;
 }
 
 html {
@@ -21,5 +21,5 @@ html {
 }
 
 .topheader {
-    background-color: darkslategray
+    background-color: royalblue
 }

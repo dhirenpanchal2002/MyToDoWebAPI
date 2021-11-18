@@ -1,0 +1,30 @@
+﻿.gridContainer {
+    margin: 5px 0px 0px 0px;
+    padding: 2px 2px 2px 2px;
+    width: 100%;
+    grid-template-columns: 33% 33% 33%;
+    align-items: start;
+    justify-content: space-between;
+    display: grid;
+    vertical-align: text-top;
+    border: 0px solid blue;
+    column-gap: 2px;
+    row-gap: 2px;
+    place-items: stretch;
+}
+
+.gridItem {
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid gray;   
+    text-align:left;
+    max-height:200px;
+    max-width:400px;
+    font-size : 14px;
+}
+
+.liItem {
+    text-decoration: none;
+    list-style-type: none;
+    text-align: left;
+}

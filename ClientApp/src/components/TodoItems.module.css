@@ -2,7 +2,7 @@
     margin: auto;
     padding: 2px 2px 2px 2px;
     width: 100%;
-    border-bottom: solid 1px #808080;
+    border-bottom: solid 1px #808080  ;
     height: 40px;
     vertical-align: text-top;
     display: flex;
@@ -16,7 +16,7 @@
     padding: 3px 3px 3px 3px;
     border: solid 1px gray;
     display: inline-block;
-    width: 70%;
+    width: 100%;
     height: 25px;
     line-height: 25px;
     cursor: auto;
@@ -43,9 +43,11 @@
     vertical-align: top;
 }
 
-.rightBox {    
+.rightBox {
     text-align: right;
-    width:50%;
+    width: 50%;
+    display: flex;
+    justify-content: right
 }
 
 .leftBox {

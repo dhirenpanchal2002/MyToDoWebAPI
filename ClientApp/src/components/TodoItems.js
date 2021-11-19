@@ -25,6 +25,22 @@ const TodoItems =(props) => {
     let gridViewClass = Classes.imgIcon;
     let listViewClass = Classes.imgIconSelected;
 
+    var results = FilterResults();
+
+    function FilterResults() {
+
+       // console.log("SearchText in filter : " + SearchText);
+
+            return todoList.filter(function (el) {
+                if (SearchText === "")
+                    return el;
+                else {
+                    //console.log("item : " + el.name.indexOf(SearchText));
+                    return el.name.indexOf(SearchText) != -1 || el.description.indexOf(SearchText) != -1 ;
+                }
+            });
+        }
+
     function onDisplayViewChange(event) {
         if (event.target.id == "imgGrid")
         {
@@ -62,7 +78,7 @@ const TodoItems =(props) => {
     
     let contents = loading
         ? <p><em>Loading...</em></p>
-        : IsGridView ? <GridData todoList={todoList}> </GridData> : <ListData todoList={todoList}> </ListData>
+        : IsGridView ? <GridData todoList={results}> </GridData> : <ListData todoList={results}> </ListData>
 
         return (
             <div >
@@ -76,9 +92,9 @@ const TodoItems =(props) => {
                         <img src={gridIcon} className={gridViewClass} alt="Grid" id="imgGrid" onClick={onDisplayViewChange} />
                     </div>
                     <div className={Classes.rightBox}>
+                        <p>Search:</p>
                         <input className={Classes.Searchbox} type="text" name="SearchTextbox" id="SearchTextbox" value={SearchText}
-                            autoComplete="true" onChange={onSearchTextChangeHandler} placeholder="Search text" />                    
-                        <img src={searchIcon} alt="Search" onClick={SearchToDoItem} className={Classes.imgIconSelected} id="imgSearch" />
+                            autoComplete="true" onChange={onSearchTextChangeHandler} placeholder="Search text" />                                            
                     </div>
                     
                 </div>
